@@ -475,8 +475,11 @@ double multiplyNumbers(double n)
 }
 void F() 
 {
-
-    for (double n = 0; n < 172; n++)
+    int test;
+    printf("how many factorials do you need");
+    scanf("%lf", &test");
+    
+    for (double n = 0; n < test; n++)
     {
         printf("Factorial of %g = %g\n", n, multiplyNumbers(n));
     }
