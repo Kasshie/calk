@@ -7,7 +7,6 @@ double pi = atan(1) * 4;
 int c0, c1, c2, c3, c4;
 int e;
 
-
 void empty_input(void) /* simple helper-function to empty stdin : "i have no idea how this works but it works"*/
 {
     int c = getchar();
@@ -22,6 +21,26 @@ void cleanscreen(void)
         printf("\n");
     }
 }
+
+double printer_for_para(double a,double b,double c,double h,double k,double x,double y)
+{
+  
+  printf("\n\nforme generale  : y = %gx^2 + %gx + %g\n"             , a, b, c); // General form
+  printf("forme canonique     : y = %g ( x - %g )^2 + %g \n"        , a, h, k); // Canonique
+  printf("forme factoriser    : y = %g ( x1 - %g ) ( x2 - %g ) \n"  , a, x, y); // factoriser
+   
+  printf("\nZ1    : %g\n", x);
+  printf("Z2      : %g\n", y);
+  printf("\nh     : %g\n", h);
+  printf("k       : %g\n", k);
+  printf("\na     : %g\n", a);
+  printf("b       : %g\n", b);
+  printf("c       : %g\n", c);
+
+  return 0;
+}
+
+
 void parabole(void)
 {
     double a, b, c, h, k, y, x;
@@ -44,19 +63,9 @@ void parabole(void)
         h = (-b) / (2 * a);
         k = ((4 * a * c) - pow(b, 2)) / (4 * a);
 
-        printf("\n\ny = %gx^2 + %gx + %g\n", a, b, c); // general form
-        printf("y = %g ( x - %g )^2 + %g \n", a, h, k); // canonique
-        printf("y = %g ( x1 - %g ) ( x2 - %g ) \n", a, x, y);
+        printer_for_para(a, b, c, h, k, x, y);
+    } 
 
-        printf("\nZ1: %g\n", x);
-        printf("Z2: %g\n", y);
-        printf("\nh: %g\n", h);
-        printf("k: %g\n", k);
-        printf("\na: %g\n", a);
-        printf("b: %g\n", b);
-        printf("c: %g\n", c);
-
-    }
     else if (c2 == 2)
     {
         printf("a: ");
@@ -73,17 +82,8 @@ void parabole(void)
         b = -x - y;
         c = x * y;
 
-        printf("\n\ny = %gx^2 + %gx + %g\n", a, b, c); // general form
-        printf("y = %g ( x - %g )^2 + %g \n", a, h, k); // canonique
-        printf("y = %g ( x1 - %g ) ( x2 - %g ) \n", a, x, y);
+        printer_for_para(a, b, c, h, k, x, y);
 
-        printf("\nZ1: %g\n", x);
-        printf("Z2: %g\n", y);
-        printf("\nh: %g\n", h);
-        printf("k: %g\n", k);
-        printf("\na: %g\n", a);
-        printf("b: %g\n", b);
-        printf("c: %g\n", c);
     }
     else if (c2 == 3)
     {
@@ -100,17 +100,8 @@ void parabole(void)
         b = -x - y;
         c = x * y;
 
-        printf("\n\ny = %gx^2 + %gx + %g\n", a, b, c); // general form
-        printf("y = %g ( x - %g )^2 + %g \n", a, h, k); // canonique
-        printf("y = %g ( x1 - %g ) ( x2 - %g ) \n", a, x, y);
-
-        printf("\nZ1: %g\n", x);
-        printf("Z2: %g\n", y);
-        printf("\nh: %g\n", h);
-        printf("k: %g\n", k);
-        printf("\na: %g\n", a);
-        printf("b: %g\n", b);
-        printf("c: %g\n", c);
+        
+        printer_for_para(a, b, c, h, k, x, y);
 
     }
 }
@@ -329,17 +320,7 @@ void T(void)
         printf("\nK: %g\n F: %g", a, x);
     }
 }
-void H(void)
-{
-    double h = 0;
-    double j = 0;
 
-    for (double i = 1; i < 1000000; i++)
-    {
-        h = h + 1 / i;
-        printf("%lf    |     %lf\n", i, h);
-    }
-}
 void FS(void)
 {
     int choice;
@@ -475,11 +456,9 @@ double multiplyNumbers(double n)
 }
 void F() 
 {
-    int test;
-    printf("how many factorials do you need");
-    scanf("%lf", &test");
+    double f = 180;
     
-    for (double n = 0; n < test; n++)
+    for (double n = 0; n < f; n++)
     {
         printf("Factorial of %g = %g\n", n, multiplyNumbers(n));
     }
@@ -541,18 +520,19 @@ void FL(void)
 
 int main()
 {
+    system("clear");
     int c1;
     while (1)
     {
-        printf("Please select an operation\n\ 
-(0) exit,\n\(1) parabole,\n\ 
-(2) fn de sqrt, \n\ 
-(3) Heron's formala,\n\ 
-(5) Convert temperature,\n\ 
-(6) Harmonic numbers series\n\ 
-(7) Factoriels\n\ 
-(8) fonctions sinusoidales\n\ 
-(9) fonction logarithmique: ");
+        printf("Please select an operation\n\
+(0) exit,\n\
+(1) parabole,\n\
+(2) fn de sqrt,\n\
+(3) Heron's formala,\n\
+(5) Convert temperature,\n\
+(6) Factoriels\n\
+(7) fonctions sinusoidales\n\
+(8) fonction logarithmique\n: ");
 
         scanf("%d", &c1);
 
@@ -581,22 +561,17 @@ int main()
             T();
             empty_input();
         }
-        else if (c1 == 6) // harmonic numbers
-        {
-            H();
-            empty_input();
-        }
-        else if (c1 == 7) // factorial
+        else if (c1 == 6) // factorial
         {
             F();
             empty_input();
         }
-        else if (c1 == 8) // fonctions sinusoildale
+        else if (c1 == 7) // fonctions sinusoildale
         {
             FS();
             empty_input();
         }
-        else if (c1 == 9) // fonction logarithmique
+        else if (c1 == 8) // fonction logarithmique
         {
             FL();
             empty_input();
