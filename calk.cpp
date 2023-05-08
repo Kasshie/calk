@@ -1,11 +1,9 @@
 #include <cmath>
 #include <cstdio>
 #include <iostream>
-
 double a, b, c, h, k, z, y, x;
 double pi = atan(1) * 4;
-int c0, c1, c2, c3, c4;
-int e;
+int c0, c1, c2, c3, c4, e;
 
 // TODO:
 // get some bitches
@@ -13,27 +11,12 @@ int e;
 // FIXME:
 // fix my life please
 
-void empty_input(void) /* simple helper-function to empty stdin : "i have no idea how this works but it works"*/
-{
-	int c = getchar();
-
-	while (c != '\n' && c != EOF)
-		c = getchar();
-}
-void cleanscreen(void)
-{
-	for (int i = 0; i < 50; i++) // clear the screen
-	{
-		printf("\n");
-	}
-}
+void empty_input(void){int c = getchar();while (c != '\n' && c != EOF){c = getchar();}}
 double printer_for_para(double a, double b, double c, double h, double k, double x, double y)
 {
-
 	printf("\n\nforme generale  : y = %gx^2 + %gx + %g\n", a, b, c);			// General form
 	printf("forme canonique     : y = %g ( x - %g )^2 + %g \n", a, h, k);		// Canonique
 	printf("forme factoriser    : y = %g ( x1 - %g ) ( x2 - %g ) \n", a, x, y); // factoriser
-
 	printf("\nZ1    : %g\n", x);
 	printf("Z2      : %g\n", y);
 	printf("\nh     : %g\n", h);
@@ -41,7 +24,6 @@ double printer_for_para(double a, double b, double c, double h, double k, double
 	printf("\na     : %g\n", a);
 	printf("b       : %g\n", b);
 	printf("c       : %g\n", c);
-
 	return 0;
 }
 void parabole(void)
@@ -59,16 +41,12 @@ void parabole(void)
 		scanf("%lf", &b);
 		printf("c: ");
 		scanf("%lf", &c);
-
 		x = (-b + sqrt(pow(b, 2) - 4 * a * c)) / (2 * a); // Z1
 		y = (-b - sqrt(pow(b, 2) - 4 * a * c)) / (2 * a); // Z2
-
 		h = (-b) / (2 * a);
 		k = ((4 * a * c) - pow(b, 2)) / (4 * a);
-
 		printer_for_para(a, b, c, h, k, x, y);
 	}
-
 	else if (c2 == 2)
 	{
 		printf("a: ");
@@ -77,13 +55,10 @@ void parabole(void)
 		scanf("%lf", &h);
 		printf("k: ");
 		scanf("%lf", &k);
-
 		x = (h) + sqrt((-k) / (a));
 		y = (h)-sqrt((-k) / (a));
-
 		b = -x - y;
 		c = x * y;
-
 		printer_for_para(a, b, c, h, k, x, y);
 	}
 	else if (c2 == 3)
@@ -94,13 +69,10 @@ void parabole(void)
 		scanf("%lf", &x);
 		printf("Z2: ");
 		scanf("%lf", &y);
-
 		h = (x + y) / 2;
 		k = a * (h - x) * (h - y);
-
 		b = -x - y;
 		c = x * y;
-
 		printer_for_para(a, b, c, h, k, x, y);
 	}
 }
@@ -108,7 +80,6 @@ void fn_de_sqrt(void)
 {
 	double a, h, k, x, y;
 	int b;
-
 	printf("h: ");
 	scanf("%lf", &h);
 	printf("k: ");
@@ -117,28 +88,22 @@ void fn_de_sqrt(void)
 	scanf("%lf", &x);
 	printf("y: ");
 	scanf("%lf", &y);
-
 	printf("\nIs \"b\" positive or negative(Enter 1 or -1) ? : ");
 	scanf("%d", &b);
-
 	a = (y - k) / (sqrt(b * (x - h)));
-
 	printf("y = %g sqrt( %d(x - %g) ) + %g", a, b, h, k);
 }
 void heron(void)
 {
 	double a, b, c, y, x;
-
 	printf("a: ");
 	scanf("%lf", &a);
 	printf("b: ");
 	scanf("%lf", &b);
 	printf("c: ");
 	scanf("%lf", &c);
-
 	y = (a + b + c) / 2;
 	x = sqrt(y * (y - a) * (y - b) * (y - c));
-
 	printf("%g\n", x);
 }
 void sct(void)
@@ -327,18 +292,14 @@ void FS(void)
 	int choice4;
 	printf("Sin (1) or cos (2)? ;");
 	scanf("%i", &choice);
-
 	if (choice == 1) // sin
 	{
 		printf("find value of x(1) or y(2)?\n: ");
 		scanf("%i", &choice3);
-
 		if (choice3 == 1)
 		{
 			// find x       y=asinb(x-h)+k
-			double holder, holderr;
-			double y, a, b, h, k;
-
+			double y, a, b, h, k, holder, holderr;
 			printf("value of y;\n: ");
 			scanf("%lf", &y);
 			printf("value of a;\n: ");
@@ -349,19 +310,14 @@ void FS(void)
 			scanf("%lf", &h);
 			printf("value of k;\n: ");
 			scanf("%lf", &k);
-
 			holder = (((acos((y - k) / a)) / b) + h);
 			holderr = (((0 - (cos((y - k) / a))) / b) + h);
-
 			printf("x = %g\n", holder);
 			printf("x = %g\n", holderr);
 		}
 		else if (choice3 == 2)
 		{
-			double holder;
-
-			double x, a, b, h, k;
-
+			double x, a, b, h, k, holder;
 			printf("value of x;\n: ");
 			scanf("%lf", &x);
 			printf("value of a;\n: ");
@@ -372,27 +328,19 @@ void FS(void)
 			scanf("%lf", &h);
 			printf("value of k;\n: ");
 			scanf("%lf", &k);
-
 			holder = a * (cos(b * (x - h))) + k;
-
 			printf("y = %g\n", holder);
-		}
-		else
-		{
-			// f off m8
 		}
 	}
 	else if (choice == 2) // cos
 	{
 		printf("find value of x(1) or y(2)?\n: ");
 		scanf("%i", &choice3);
-
 		if (choice3 == 1)
 		{
 			// find x       y=asinb(x-h)+k
 			double holder, holderr;
-			double y, a, b, h, k;
-
+			double y, a, b, h, k, holder, holderr;
 			printf("value of y;\n: ");
 			scanf("%lf", &y);
 			printf("value of a;\n: ");
@@ -403,19 +351,14 @@ void FS(void)
 			scanf("%lf", &h);
 			printf("value of k;\n: ");
 			scanf("%lf", &k);
-
 			holder = (((asin((y - k) / a)) / b) + h);
 			holderr = (((pi - (asin((y - k) / a))) / b) + h);
-
 			printf("x = %g\n", holder);
 			printf("x = %g\n", holderr);
 		}
 		else if (choice3 == 2)
 		{
-			double holder;
-
-			double x, a, b, h, k;
-
+			double x, a, b, h, k, holder;
 			printf("value of x;\n: ");
 			scanf("%lf", &x);
 			printf("value of a;\n: ");
@@ -426,48 +369,25 @@ void FS(void)
 			scanf("%lf", &h);
 			printf("value of k;\n: ");
 			scanf("%lf", &k);
-
 			holder = a * (sin(b * (x - h))) + k;
-
 			printf("y = %g\n", holder);
 		}
-		else
-		{
-			// f off m8
-		}
-	}
-	else
-	{
-		// do this
 	}
 }
-double multiplyNumbers(double n)
-{
-	if (n >= 1)
-		return n * multiplyNumbers(n - 1);
-	else
-		return 1;
-}
+double multiplyNumbers(double n) {if (n >= 1) {return n * multiplyNumbers(n - 1);} else {return 1;}}
 void F()
 {
 	double f = 180;
-
-	for (double n = 0; n < f; n++)
-	{
-		printf("Factorial of %g = %g\n", n, multiplyNumbers(n));
-	}
+	for (double n = 0; n < f; n++) { printf("Factorial of %g = %g\n", n, multiplyNumbers(n)); }
 }
 void FL(void)
 {
 	int ch;
 	printf("find x(1) or y(2): ");
 	scanf("%i", &ch);
-
 	if (ch == 1)
 	{
-		double holder;
-		double y, a, b, h, k;
-
+		double y, a, b, h, k, holder;
 		printf("value of y;\n: ");
 		scanf("%lf", &y);
 		printf("value of a;\n: ");
@@ -478,17 +398,12 @@ void FL(void)
 		scanf("%lf", &h);
 		printf("value of k;\n: ");
 		scanf("%lf", &k);
-
 		holder = ((pow(c, (y - k) / a) / b) + h);
-
 		printf("x = %g\n", holder);
 	}
 	else if (ch == 2)
 	{
-		double holder;
-
-		double x, a, b, h, k;
-
+		double x, a, b, h, k, holder;
 		printf("value of x;\n: ");
 		scanf("%lf", &x);
 		printf("value of a;\n: ");
@@ -499,17 +414,10 @@ void FL(void)
 		scanf("%lf", &h);
 		printf("value of k;\n: ");
 		scanf("%lf", &k);
-
 		holder = (a * (log(b * (x - h)) / log(c)) + k);
-
 		printf("y = %g\n", holder);
 	}
-	else
-	{
-		// f off m8
-	}
 }
-
 int main()
 {
 	system("clear");
@@ -525,60 +433,19 @@ int main()
 (6) Factoriels\n\
 (7) fonctions sinusoidales\n\
 (8) fonction logarithmique\n: ");
-
 		scanf("%d", &c1);
 
-		if (c1 == 1) // parabole
-		{
-			parabole();
-			empty_input();
-		}
-		else if (c1 == 2)
-		{
-			fn_de_sqrt();
-			empty_input();
-		}
-		else if (c1 == 3) // Heron's formula
-		{
-			heron();
-			empty_input();
-		}
-		else if (c1 == 4) // sincostan
-		{
-			sct();
-			empty_input();
-		}
-		else if (c1 == 5) // convert temperature
-		{
-			T();
-			empty_input();
-		}
-		else if (c1 == 6) // factorial
-		{
-			F();
-			empty_input();
-		}
-		else if (c1 == 7) // fonctions sinusoildale
-		{
-			FS();
-			empty_input();
-		}
-		else if (c1 == 8) // fonction logarithmique
-		{
-			FL();
-			empty_input();
-		}
-		///////////////////////////////////
-
-		else if (c1 == 0) // exit
-		{
-			return 0;
-		}
-		else
-		{
-			printf("Enter an option\n");
-		}
-		printf("\n\n________________________________________\n\n");
+		if 		(c1 == 1)	{	parabole();		empty_input();}
+		else if (c1 == 2)	{	fn_de_sqrt();	empty_input();}
+		else if (c1 == 3)	{	heron();		empty_input();}
+		else if (c1 == 4)	{	sct();			empty_input();}
+		else if (c1 == 5)	{	T();			empty_input();}
+		else if (c1 == 6)	{	F();			empty_input();}
+		else if (c1 == 7)	{	FS();			empty_input();}
+		else if (c1 == 8)	{	FL();			empty_input();}
+		else if (c1 == 0)	{	return 0;}
+		else { printf("Enter an option\n"); }
+			printf("\n\n________________________________________\n\n");
 	}
 	return 0;
 }
