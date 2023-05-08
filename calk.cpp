@@ -339,7 +339,6 @@ void FS(void)
 		if (choice3 == 1)
 		{
 			// find x       y=asinb(x-h)+k
-			double holder, holderr;
 			double y, a, b, h, k, holder, holderr;
 			printf("value of y;\n: ");
 			scanf("%lf", &y);
