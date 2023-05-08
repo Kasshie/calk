@@ -7,6 +7,12 @@ double pi = atan(1) * 4;
 int c0, c1, c2, c3, c4;
 int e;
 
+// TODO:
+// get some bitches
+
+// FIXME:
+// fix my life please
+
 void empty_input(void) /* simple helper-function to empty stdin : "i have no idea how this works but it works"*/
 {
 	int c = getchar();
@@ -21,7 +27,6 @@ void cleanscreen(void)
 		printf("\n");
 	}
 }
-
 double printer_for_para(double a, double b, double c, double h, double k, double x, double y)
 {
 
@@ -39,7 +44,6 @@ double printer_for_para(double a, double b, double c, double h, double k, double
 
 	return 0;
 }
-
 void parabole(void)
 {
 	double a, b, c, h, k, y, x;
@@ -315,7 +319,6 @@ void T(void)
 		printf("\nK: %g\n F: %g", a, x);
 	}
 }
-
 void FS(void)
 {
 	int choice;
