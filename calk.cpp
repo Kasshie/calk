@@ -1,16 +1,7 @@
 #include <cmath>
 #include <cstdio>
 #include <iostream>
-double a, b, c, h, k, z, y, x;
-double pi = atan(1) * 4;
-int c0, c1, c2, c3, c4, e;
-
-// TODO:
-// get some bitches
-
-// FIXME:
-// fix my life please
-
+double a, b, c, h, k, z, y, x, c0, c1, c2, c3, c4, e, pi = atan(1) * 4;
 void empty_input(void){int c = getchar();while (c != '\n' && c != EOF){c = getchar();}}
 double printer_for_para(double a, double b, double c, double h, double k, double x, double y)
 {
@@ -28,19 +19,15 @@ double printer_for_para(double a, double b, double c, double h, double k, double
 }
 void parabole(void)
 {
-	double a, b, c, h, k, y, x;
-	int c0, c1, c2, c3, c4;
+	double a, b, c, h, k, y, x; int c0, c1, c2, c3, c4;
 	printf("\n\nQuelle forme est connue?:\n(1)general,\n(2)canonique,\n(3)Factoriser\n:");
 	scanf("%d", &c2);
 	printf("\n");
 	if (c2 == 1) // canonique
 	{
-		printf("a: ");
-		scanf("%lf", &a);
-		printf("b: ");
-		scanf("%lf", &b);
-		printf("c: ");
-		scanf("%lf", &c);
+		printf("a: ");	scanf("%lf", &a);
+		printf("b: ");	scanf("%lf", &b);
+		printf("c: ");	scanf("%lf", &c);
 		x = (-b + sqrt(pow(b, 2) - 4 * a * c)) / (2 * a); // Z1
 		y = (-b - sqrt(pow(b, 2) - 4 * a * c)) / (2 * a); // Z2
 		h = (-b) / (2 * a);
@@ -49,12 +36,9 @@ void parabole(void)
 	}
 	else if (c2 == 2)
 	{
-		printf("a: ");
-		scanf("%lf", &a);
-		printf("h: ");
-		scanf("%lf", &h);
-		printf("k: ");
-		scanf("%lf", &k);
+		printf("a: ");	scanf("%lf", &a);
+		printf("h: ");	scanf("%lf", &h);
+		printf("k: ");	scanf("%lf", &k);
 		x = (h) + sqrt((-k) / (a));
 		y = (h)-sqrt((-k) / (a));
 		b = -x - y;
@@ -63,12 +47,9 @@ void parabole(void)
 	}
 	else if (c2 == 3)
 	{
-		printf("a: ");
-		scanf("%lf", &a);
-		printf("Z1: ");
-		scanf("%lf", &x);
-		printf("Z2: ");
-		scanf("%lf", &y);
+		printf("a: ");	scanf("%lf", &a);
+		printf("Z1: ");	scanf("%lf", &x);
+		printf("Z2: ");	scanf("%lf", &y);
 		h = (x + y) / 2;
 		k = a * (h - x) * (h - y);
 		b = -x - y;
@@ -80,14 +61,10 @@ void fn_de_sqrt(void)
 {
 	double a, h, k, x, y;
 	int b;
-	printf("h: ");
-	scanf("%lf", &h);
-	printf("k: ");
-	scanf("%lf", &k);
-	printf("x: ");
-	scanf("%lf", &x);
-	printf("y: ");
-	scanf("%lf", &y);
+	printf("h: ");	scanf("%lf", &h);
+	printf("k: ");	scanf("%lf", &k);
+	printf("x: ");	scanf("%lf", &x);
+	printf("y: ");	scanf("%lf", &y);
 	printf("\nIs \"b\" positive or negative(Enter 1 or -1) ? : ");
 	scanf("%d", &b);
 	a = (y - k) / (sqrt(b * (x - h)));
@@ -96,22 +73,16 @@ void fn_de_sqrt(void)
 void heron(void)
 {
 	double a, b, c, y, x;
-	printf("a: ");
-	scanf("%lf", &a);
-	printf("b: ");
-	scanf("%lf", &b);
-	printf("c: ");
-	scanf("%lf", &c);
+	printf("a: ");	scanf("%lf", &a);
+	printf("b: ");	scanf("%lf", &b);
+	printf("c: ");	scanf("%lf", &c);
 	y = (a + b + c) / 2;
 	x = sqrt(y * (y - a) * (y - b) * (y - c));
 	printf("%g\n", x);
 }
 void sct(void)
 {
-	double a, b, c, h, k, z, y, x;
-	int c0, c1, c2, c3, c4;
-	double pi = atan(1) * 4;
-	double o, an, m, rd; // rd(Radians to degrees)
+	double a, b, c, h, k, z, y, x, o, an, m, rd, pi = atan(1) * 4; int c0, c1, c2, c3, c4;
 	printf("\n\nFind ;\n(1)length\n(2)angle\n");
 	scanf("%d", &c2);
 	if (c2 == 1) // find length
@@ -125,10 +96,8 @@ void sct(void)
 			if (c4 == 1) // opposite
 			{
 				printf("Enter hypotenuse and angle\n");
-				printf("Hyp: ");
-				scanf("%lf", &h);
-				printf("angle: ");
-				scanf("%lf", &an);
+				printf("Hyp: ");	scanf("%lf", &h);
+				printf("angle: ");	scanf("%lf", &an);
 				rd = an * pi / 180;
 				x = h * sin(rd);
 				printf("%g\n", x);
@@ -136,10 +105,8 @@ void sct(void)
 			else if (c4 == 2)
 			{
 				printf("Enter Opposite and angle\n");
-				printf("O: ");
-				scanf("%lf", &o);
-				printf("angle: ");
-				scanf("%lf", &an);
+				printf("O: ");		scanf("%lf", &o);
+				printf("angle: ");	scanf("%lf", &an);
 				rd = an * pi / 180;
 				x = o / sin(rd);
 				printf("%g\n", x);
@@ -152,10 +119,8 @@ void sct(void)
 			if (c4 == 1) // opposite
 			{
 				printf("Enter hypotenuse and angle\n");
-				printf("Hyp: ");
-				scanf("%lf", &h);
-				printf("angle: ");
-				scanf("%lf", &an);
+				printf("Hyp: ");	scanf("%lf", &h);
+				printf("angle: ");	scanf("%lf", &an);
 				rd = an * pi / 180;
 				x = h * cos(rd);
 				printf("%g\n", x);
@@ -163,10 +128,8 @@ void sct(void)
 			else if (c4 == 2)
 			{
 				printf("Enter Adjacent and angle\n");
-				printf("O: ");
-				scanf("%lf", &a);
-				printf("angle: ");
-				scanf("%lf", &an);
+				printf("O: ");		scanf("%lf", &a);
+				printf("angle: ");	scanf("%lf", &an);
 				rd = an * pi / 180;
 				x = a / cos(rd);
 				printf("%g\n", x);
@@ -179,10 +142,8 @@ void sct(void)
 			if (c4 == 1) // opposite
 			{
 				printf("Enter Opposite and angle\n");
-				printf("Hyp: ");
-				scanf("%lf", &o);
-				printf("angle: ");
-				scanf("%lf", &an);
+				printf("Hyp: ");	scanf("%lf", &o);
+				printf("angle: ");	scanf("%lf", &an);
 				rd = an * pi / 180;
 				x = o / tan(rd);
 				printf("%g\n", x);
@@ -190,10 +151,8 @@ void sct(void)
 			else if (c4 == 2)
 			{
 				printf("Enter Adjacent and angle\n");
-				printf("O: ");
-				scanf("%lf", &a);
-				printf("angle: ");
-				scanf("%lf", &an);
+				printf("O: ");		scanf("%lf", &a);
+				printf("angle: ");	scanf("%lf", &an);
 				rd = an * pi / 180;
 				x = a * tan(rd);
 				printf("%g\n", x);
@@ -206,30 +165,24 @@ void sct(void)
 		scanf("%d", &c3);
 		if (c3 == 1) // sin
 		{
-			printf("Opposite : ");
-			scanf("%lf", &o);
-			printf("Hypotenuse : ");
-			scanf("%lf", &h);
+			printf("Opposite : ");		scanf("%lf", &o);
+			printf("Hypotenuse : ");	scanf("%lf", &h);
 			x = asin(o / h);
 			rd = x * 180 / pi;
 			printf("%g", rd);
 		}
 		else if (c3 == 2) // cos
 		{
-			printf("Adjacent : ");
-			scanf("%lf", &a);
-			printf("Hypotenuse : ");
-			scanf("%lf", &h);
+			printf("Adjacent : ");		scanf("%lf", &a);
+			printf("Hypotenuse : ");	scanf("%lf", &h);
 			x = acos(a / h);
 			rd = x * 180 / pi;
 			printf("%g", rd);
 		}
 		else if (c3 == 3) // tan
 		{
-			printf("Adjacent : ");
-			scanf("%lf", &a);
-			printf("Opposite : ");
-			scanf("%lf", &o);
+			printf("Adjacent : ");	scanf("%lf", &a);
+			printf("Opposite : ");	scanf("%lf", &o);
 			x = atan(o / a);
 			rd = x * 180 / pi;
 			printf("%g", rd);
@@ -243,55 +196,45 @@ void T(void)
 	scanf("%d", &c2);
 	if (c2 == 1) // f to c
 	{
-		printf(" F: ");
-		scanf("%lf", &a);
+		printf(" F: "); scanf("%lf", &a);
 		x = (a - 32) * 0.5556;
 		printf("\n F: %g\n C: %g", a, x);
 	}
 	else if (c2 == 2) // c to f
 	{
-		printf(" C: ");
-		scanf("%lf", &a);
+		printf(" C: "); scanf("%lf", &a);
 		x = a * 1.8 + 32;
 		printf("\n C: %g\n F: %g", a, x);
 	}
 	else if (c2 == 3) // c to k
 	{
-		printf(" C: ");
-		scanf("%lf", &a);
+		printf(" C: "); scanf("%lf", &a);
 		x = a + 273.15;
 		printf("\n C: %g\nK: %g", a, x);
 	}
 	else if (c2 == 4) // k to c
 	{
-		printf("K: ");
-		scanf("%lf", &a);
+		printf("K: "); scanf("%lf", &a);
 		x = a - 273.15;
 		printf("\nK: %g\n C: %g", a, x);
 	}
 	else if (c2 == 5) // F to K
 	{
-		printf(" F: ");
-		scanf("%lf", &a);
+		printf(" F: "); scanf("%lf", &a);
 		x = ((a - 32) * 5 / 9) + 273.15;
 		printf("\n F: %g\nK: %g", a, x);
 	}
 	else if (c2 == 6) // K to F
 	{
-		printf("K: ");
-		scanf("%lf", &a);
+		printf("K: "); scanf("%lf", &a);
 		x = ((a - 273.15) * 9 / 5) + 32;
 		printf("\nK: %g\n F: %g", a, x);
 	}
 }
 void FS(void)
 {
-	int choice;
-	int choice2;
-	int choice3;
-	int choice4;
-	printf("Sin (1) or cos (2)? ;");
-	scanf("%i", &choice);
+	int choice, choice2, choice3, choice4;
+	printf("Sin (1) or cos (2)? ;"); scanf("%i", &choice);
 	if (choice == 1) // sin
 	{
 		printf("find value of x(1) or y(2)?\n: ");
@@ -300,16 +243,11 @@ void FS(void)
 		{
 			// find x       y=asinb(x-h)+k
 			double y, a, b, h, k, holder, holderr;
-			printf("value of y;\n: ");
-			scanf("%lf", &y);
-			printf("value of a;\n: ");
-			scanf("%lf", &a);
-			printf("value of b;\n: ");
-			scanf("%lf", &b);
-			printf("value of h;\n: ");
-			scanf("%lf", &h);
-			printf("value of k;\n: ");
-			scanf("%lf", &k);
+			printf("value of y;\n: ");	scanf("%lf", &y);
+			printf("value of a;\n: ");	scanf("%lf", &a);
+			printf("value of b;\n: ");	scanf("%lf", &b);
+			printf("value of h;\n: ");	scanf("%lf", &h);
+			printf("value of k;\n: ");	scanf("%lf", &k);
 			holder = (((acos((y - k) / a)) / b) + h);
 			holderr = (((0 - (cos((y - k) / a))) / b) + h);
 			printf("x = %g\n", holder);
@@ -318,16 +256,11 @@ void FS(void)
 		else if (choice3 == 2)
 		{
 			double x, a, b, h, k, holder;
-			printf("value of x;\n: ");
-			scanf("%lf", &x);
-			printf("value of a;\n: ");
-			scanf("%lf", &a);
-			printf("value of b;\n: ");
-			scanf("%lf", &b);
-			printf("value of h;\n: ");
-			scanf("%lf", &h);
-			printf("value of k;\n: ");
-			scanf("%lf", &k);
+			printf("value of x;\n: ");	scanf("%lf", &x);
+			printf("value of a;\n: ");	scanf("%lf", &a);
+			printf("value of b;\n: ");	scanf("%lf", &b);
+			printf("value of h;\n: ");	scanf("%lf", &h);
+			printf("value of k;\n: ");	scanf("%lf", &k);
 			holder = a * (cos(b * (x - h))) + k;
 			printf("y = %g\n", holder);
 		}
@@ -340,16 +273,11 @@ void FS(void)
 		{
 			// find x       y=asinb(x-h)+k
 			double y, a, b, h, k, holder, holderr;
-			printf("value of y;\n: ");
-			scanf("%lf", &y);
-			printf("value of a;\n: ");
-			scanf("%lf", &a);
-			printf("value of b;\n: ");
-			scanf("%lf", &b);
-			printf("value of h;\n: ");
-			scanf("%lf", &h);
-			printf("value of k;\n: ");
-			scanf("%lf", &k);
+			printf("value of y;\n: ");	scanf("%lf", &y);
+			printf("value of a;\n: ");	scanf("%lf", &a);
+			printf("value of b;\n: ");	scanf("%lf", &b);
+			printf("value of h;\n: ");	scanf("%lf", &h);
+			printf("value of k;\n: ");	scanf("%lf", &k);
 			holder = (((asin((y - k) / a)) / b) + h);
 			holderr = (((pi - (asin((y - k) / a))) / b) + h);
 			printf("x = %g\n", holder);
@@ -358,16 +286,11 @@ void FS(void)
 		else if (choice3 == 2)
 		{
 			double x, a, b, h, k, holder;
-			printf("value of x;\n: ");
-			scanf("%lf", &x);
-			printf("value of a;\n: ");
-			scanf("%lf", &a);
-			printf("value of b;\n: ");
-			scanf("%lf", &b);
-			printf("value of h;\n: ");
-			scanf("%lf", &h);
-			printf("value of k;\n: ");
-			scanf("%lf", &k);
+			printf("value of x;\n: ");	scanf("%lf", &x);
+			printf("value of a;\n: ");	scanf("%lf", &a);
+			printf("value of b;\n: ");	scanf("%lf", &b);
+			printf("value of h;\n: ");	scanf("%lf", &h);
+			printf("value of k;\n: ");	scanf("%lf", &k);
 			holder = a * (sin(b * (x - h))) + k;
 			printf("y = %g\n", holder);
 		}
@@ -377,42 +300,31 @@ double multiplyNumbers(double n) {if (n >= 1) {return n * multiplyNumbers(n - 1)
 void F()
 {
 	double f = 180;
-	for (double n = 0; n < f; n++) { printf("Factorial of %g = %g\n", n, multiplyNumbers(n)); }
+	for (double n = 0; n < f ; n++) { printf("Factorial of %g = %g\n", n, multiplyNumbers(n)); }
 }
 void FL(void)
 {
 	int ch;
-	printf("find x(1) or y(2): ");
-	scanf("%i", &ch);
+	printf("find x(1) or y(2): "); scanf("%i", &ch);
 	if (ch == 1)
 	{
 		double y, a, b, h, k, holder;
-		printf("value of y;\n: ");
-		scanf("%lf", &y);
-		printf("value of a;\n: ");
-		scanf("%lf", &a);
-		printf("value of b;\n: ");
-		scanf("%lf", &b);
-		printf("value of h;\n: ");
-		scanf("%lf", &h);
-		printf("value of k;\n: ");
-		scanf("%lf", &k);
+		printf("value of y;\n: ");	scanf("%lf", &y);
+		printf("value of a;\n: ");	scanf("%lf", &a);
+		printf("value of b;\n: ");	scanf("%lf", &b);
+		printf("value of h;\n: ");	scanf("%lf", &h);
+		printf("value of k;\n: ");	scanf("%lf", &k);
 		holder = ((pow(c, (y - k) / a) / b) + h);
 		printf("x = %g\n", holder);
 	}
 	else if (ch == 2)
 	{
 		double x, a, b, h, k, holder;
-		printf("value of x;\n: ");
-		scanf("%lf", &x);
-		printf("value of a;\n: ");
-		scanf("%lf", &a);
-		printf("value of b;\n: ");
-		scanf("%lf", &b);
-		printf("value of h;\n: ");
-		scanf("%lf", &h);
-		printf("value of k;\n: ");
-		scanf("%lf", &k);
+		printf("value of x;\n: ");	scanf("%lf", &x);
+		printf("value of a;\n: ");	scanf("%lf", &a);
+		printf("value of b;\n: ");	scanf("%lf", &b);
+		printf("value of h;\n: ");	scanf("%lf", &h);
+		printf("value of k;\n: ");	scanf("%lf", &k);
 		holder = (a * (log(b * (x - h)) / log(c)) + k);
 		printf("y = %g\n", holder);
 	}
