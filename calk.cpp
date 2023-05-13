@@ -73,7 +73,7 @@ void fn_de_sqrt(void)
 }
 void heron(void)
 {
-	double a, b, c, y, x;
+	double a, b, c, y, x; // formule de Heron, check sur google si tu sais pas c koi crisse
 	printf("a: ");	scanf("%lf", &a);
 	printf("b: ");	scanf("%lf", &b);
 	printf("c: ");	scanf("%lf", &c);
@@ -83,7 +83,7 @@ void heron(void)
 }
 void sct(void)
 {
-	double a, b, c, h, k, z, y, x, o, an, m, rd, pi = atan(1) * 4; int c0, c1, c2, c3, c4;
+	double a, b, c, h, k, z, y, x, o, an, m, rd, pi = atan(1) * 4; int c0, c1, c2, c3, c4; // oui c long, comme ma bite
 	printf("\n\nFind ;\n(1)length\n(2)angle\n");
 	scanf("%d", &c2);
 	if (c2 == 1) // find length
@@ -192,7 +192,7 @@ void sct(void)
 }
 void T(void)
 {
-	double a, b, c;
+	double a, b, c; // change la temperature, because i was bored someday and made this
 	printf("\nConvert: \n F to C (1)\n C to F (2)\n C to K (3)\n K to C (4)\n F to K (5)\n K to F (6)\n: ");
 	scanf("%lf", &c2);
 	if (c2 == 1) // f to c
@@ -234,7 +234,7 @@ void T(void)
 }
 void FS(void)
 {
-	int choice, choice2, choice3, choice4;
+	int choice, choice2, choice3, choice4; // fonctions sinusoidales
 	printf("Sin (1) or cos (2)? ;"); scanf("%i", &choice);
 	if (choice == 1) // sin
 	{
@@ -297,15 +297,15 @@ void FS(void)
 		}
 	}
 }
-double multiplyNumbers(double n) {if (n >= 1) {return n * multiplyNumbers(n - 1);} else {return 1;}}
+double multiplyNumbers(double n) {if (n >= 1) {return n * multiplyNumbers(n - 1);} else {return 1;}} // fonction utililser pour la factorielle
 void F()
 {
-	double f = 180;
+	double f = 180; // fonction facorielle
 	for (double n = 0; n < f ; n++) { printf("Factorial of %g = %g\n", n, multiplyNumbers(n)); }
 }
 void FL(void)
 {
-	int ch;
+	int ch; // fonctions logarithmique
 	printf("find x(1) or y(2): "); scanf("%i", &ch);
 	if (ch == 1)
 	{
@@ -332,7 +332,7 @@ void FL(void)
 }
 void point_droite(void)
 {
-	double A, B, C, X, Y, d;
+	double A, B, C, X, Y, d; // distance entre le point et la droite
 	printf("Quelle est la fonction de la droite en forme generale ?");
 	printf("\nA: ");
 	scanf("%lf", &A);
