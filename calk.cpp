@@ -1,6 +1,7 @@
 #include <cmath>
 #include <cstdio>
 #include <iostream>
+//this program only works using numbers if wanting to use letter because you're a sadistic, take a god damn piece of paper, i don't give a shit about you
 double a, b, c, h, k, z, y, x, c0, c1, c2, c3, c4, e, pi = atan(1) * 4;
 void empty_input(void){int c = getchar();while (c != '\n' && c != EOF){c = getchar();}}
 double printer_for_para(double a, double b, double c, double h, double k, double x, double y)
