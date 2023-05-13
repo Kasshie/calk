@@ -193,7 +193,7 @@ void T(void)
 {
 	double a, b, c;
 	printf("\nConvert: \n F to C (1)\n C to F (2)\n C to K (3)\n K to C (4)\n F to K (5)\n K to F (6)\n: ");
-	scanf("%d", &c2);
+	scanf("%lf", &c2);
 	if (c2 == 1) // f to c
 	{
 		printf(" F: "); scanf("%lf", &a);
@@ -329,6 +329,24 @@ void FL(void)
 		printf("y = %g\n", holder);
 	}
 }
+void point_droite(void)
+{
+	double A, B, C, X, Y, d;
+	printf("Quelle est la fonction de la droite en forme generale ?");
+	printf("\nA: ");
+	scanf("%lf", &A);
+	printf("\nB: ");
+	scanf("%lf", &B);
+	printf("\nC: ");
+	scanf("%lf", &C);
+	printf("Quelle est le point ?");
+	printf("\nX: ");
+	scanf("%lf", &X);
+	printf("\nY: ");
+	scanf("%lf", &Y);
+	d = abs( ( A * X ) + ( B * Y ) + ( C ) ) / ( sqrt( pow(A, 2) * (pow(B, 2))) );
+	printf("distance entre le point et la droite\n: %g", d);
+}
 int main()
 {
 	system("clear");
@@ -343,7 +361,8 @@ int main()
 (5) Convert temperature,\n\
 (6) Factoriels\n\
 (7) fonctions sinusoidales\n\
-(8) fonction logarithmique\n: ");
+(8) fonction logarithmique\n\
+(9) distance entre un point et une droite\n:");
 		scanf("%d", &c1);
 
 		if 		(c1 == 1)	{	parabole();		empty_input();}
@@ -354,6 +373,7 @@ int main()
 		else if (c1 == 6)	{	F();			empty_input();}
 		else if (c1 == 7)	{	FS();			empty_input();}
 		else if (c1 == 8)	{	FL();			empty_input();}
+		else if (c1 == 9)	{	point_droite();	empty_input();}
 		else if (c1 == 0)	{	return 0;}
 		else { printf("Enter an option\n"); }
 			printf("\n\n________________________________________\n\n");
