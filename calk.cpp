@@ -58,19 +58,6 @@ void parabole(void)
 		printer_for_para(a, b, c, h, k, x, y);
 	}
 }
-void fn_de_sqrt(void)
-{
-	double a, h, k, x, y;
-	int b;
-	printf("h: ");	scanf("%lf", &h);
-	printf("k: ");	scanf("%lf", &k);
-	printf("x: ");	scanf("%lf", &x);
-	printf("y: ");	scanf("%lf", &y);
-	printf("\nIs \"b\" positive or negative(Enter 1 or -1) ? : ");
-	scanf("%d", &b);
-	a = (y - k) / (sqrt(b * (x - h)));
-	printf("y = %g sqrt( %d(x - %g) ) + %g", a, b, h, k);
-}
 void heron(void)
 {
 	double a, b, c, y, x; // formule de Heron, check sur google si tu sais pas c koi crisse
@@ -357,24 +344,22 @@ int main()
 		printf("Please select an operation\n\
 (0) exit,\n\
 (1) parabole,\n\
-(2) fn de sqrt,\n\
-(3) Heron's formala,\n\
-(5) Convert temperature,\n\
-(6) Factoriels\n\
-(7) fonctions sinusoidales\n\
-(8) fonction logarithmique\n\
-(9) distance entre un point et une droite\n:");
+(2) Heron's formala,\n\
+(3) Convert temperature,\n\
+(4) Factoriels\n\
+(5) fonctions sinusoidales\n\
+(6) fonction logarithmique\n\
+(7) distance entre un point et une droite\n:");
 		scanf("%d", &c1);
 
 		if 		(c1 == 1)	{	parabole();		empty_input();}
-		else if (c1 == 2)	{	fn_de_sqrt();	empty_input();}
-		else if (c1 == 3)	{	heron();		empty_input();}
-		else if (c1 == 4)	{	sct();			empty_input();}
-		else if (c1 == 5)	{	T();			empty_input();}
-		else if (c1 == 6)	{	F();			empty_input();}
-		else if (c1 == 7)	{	FS();			empty_input();}
-		else if (c1 == 8)	{	FL();			empty_input();}
-		else if (c1 == 9)	{	point_droite();	empty_input();}
+		else if (c1 == 2)	{	heron();		empty_input();}
+		else if (c1 == 3)	{	sct();			empty_input();}
+		else if (c1 == 4)	{	T();			empty_input();}
+		else if (c1 == 5)	{	F();			empty_input();}
+		else if (c1 == 6)	{	FS();			empty_input();}
+		else if (c1 == 7)	{	FL();			empty_input();}
+		else if (c1 == 8)	{	point_droite();	empty_input();}
 		else if (c1 == 0)	{	return 0;}
 		else { printf("Enter an option\n"); }
 			printf("\n\n________________________________________\n\n");
